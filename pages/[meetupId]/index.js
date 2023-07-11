@@ -1,6 +1,7 @@
 import MeetupDetails from "../../components/meetups/MeetupDetails";
 import { MongoClient, ObjectId } from "mongodb";
 import Head from "next/head";
+
 const MeetupDetail = (props) => {
   return (
     <>
@@ -38,7 +39,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const meetupId = context.params.meetupId;
-
   const client = await MongoClient.connect(
     "mongodb+srv://azhar:GsWc2UqmRfASWVRZ@cluster0.sfeyvcp.mongodb.net/meetups?retryWrites=true&w=majority"
   );
